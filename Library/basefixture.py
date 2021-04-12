@@ -1,24 +1,21 @@
 from selenium import webdriver
-from config import *
+from Library.config import Config
 import pytest
-
+from time import sleep
 
 class Driverinit:
 
     @pytest.fixture(scope="class", autouse=True)
     def driver_init(self, request):
-        if browser.lower()=="chrome":
-            driver= webdriver.Chrome(chromepath)
-
-        elif browser.lower()=="firefox":
-            driver= webdriver.firefox()
+        driver= webdriver.Chrome(Config.chromepath)
+        request.cls.driver = driver
+        driver.get(Config.url)
 
 
-        request.cls.driver= driver
-
-        driver.get(url)
         driver.maximize_window()
-        driver.implicitly_wait(30)
+        # driver.implicitly_wait(30)
+        # sleep(10)
         yield
         print(driver.title)
         driver.quit()
+

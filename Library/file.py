@@ -1,18 +1,19 @@
-import xlrd
+import json
 
-class Reader:
-    def wbreader(self, obj_filename, obj_sheetname):
-        with xlrd.open_workbook(obj_filename,obj_sheetname) as wb:
-            ws=wb.sheet_by_name(obj_sheetname)
-            rows=ws.get_rows()
-            next(rows)
-            read={row[0].value:(row[1].value,row[2].value) for row in rows}
-            return read, read.keys()
+class ReadJson:
+    """class to read loctors from json"""
 
-    # def wbvalue(self, test_data_filename, test_data_sheetname, testcase):
-    #     with xlrd.open_workbook(test_data_filename) as wb:
-    #         ws = wb.sheet_by_name(test_data_sheetname)
-    #         rows = ws.get_rows()
-    #         next(rows)
-    #         r2= {row[0].value:(row[1].value,row[2].value) for row in rows}
-    #         return r2[testcase]
+    def read_locators(self,filelocation):
+        """loading the data from  json file"""
+        with open(filelocation) as file:
+            json_obj = json.load(file)
+            dict_={}
+            for key, value in json_obj.items():
+                dict_[key] = (value['loctype'], value['locvalue'])
+        return dict_
+
+    # def read_test_data(self,file):
+    #     with open(file)as fileobj3:
+    #         j_obj=json.load(fileobj3)
+    #         list_=[ (value['product'], value['specified_product']) for key,value in j_obj.items()]
+    #     return list_
