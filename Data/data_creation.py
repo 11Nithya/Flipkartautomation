@@ -55,7 +55,7 @@ data={
                      'locvalue' :'//a[text()="9915PP56 Minimalists Analog Watch  - For Men & Women"]'},
 
     'clickon_buy':{'loctype':'xpath',
-                   'locvalue':'//button[@class="_2KpZ6l _2U9uOA ihZ75k _3AWRsL"]'},
+                   'locvalue':'//form//button[@class="_2KpZ6l _2U9uOA ihZ75k _3AWRsL"]'},
 
     'graball_menu':{'loctype':'xpath',
                      'locvalue':'//div[@class="xtXmba"]'},

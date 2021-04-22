@@ -3,27 +3,32 @@
 
 import pytest
 from Library.config import Config
-from pom.automate_flipkart import Flipkart
+from pom.Home_page import Flipkart
 from Library.basefixture import Driverinit
 from Library.file import ReadJson
+from pom.product_selection_page import Productpage
+from pom.particular_product_details import Product_details
+from pom.Cart import Cart
 import time
 
 read_json= ReadJson()
 
 class Test_Flipkart(Driverinit):
 
-    def test_obj(self):
-        "search fpr fastrack watch above 2000 and clicks on buy"
+    def test_buying_a_product(self):
+        "search for fastrack watch within 3000 and clicks on buy"
 
         flip= Flipkart(self.driver)
+        selection=Productpage(self.driver)
+        details= Product_details(self.driver)
+        cart = Cart(self.driver)
         flip.handle_popup()
         flip.search_on_item2()
         flip.click_on_magnify()
-        flip.click_on_price()
+        selection.click_on_price()
         time.sleep(2)
-        flip.click_on_fastrack()
-
-        flip.click_on_watch()
-        flip.switch_tab()
-
-        flip.click_on_buy()
+        selection.click_on_fastrack()
+        selection.click_on_watch()
+        selection.switch_tab()
+        time.sleep(3)
+        details.click_on_buy()

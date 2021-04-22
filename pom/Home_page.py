@@ -27,47 +27,11 @@ class Flipkart:
         "clicks on search icon"
         obj1.click_magnify(self.driver, element["clickon_magnify"])
 
-    def click_on_gran(self):
-        "click on the game"
-        obj1.wait_and_click(self.driver, element["clickon_gran"])
-
-    def switch_tab(self):
-        "switches the window"
-        obj1.switch_to(self.driver)
-
-    def click_on_cart(self):
-        "clicks on add to cart"
-        obj1.wait_and_click(self.driver, element["clickon_cart"])
-
-
-
-    def click_on_place_order(self):
-        "clicks on place order"
-        obj1.wait_and_click(self.driver, element["clickOnPlaceOrder"])
-
-    def click_on_fassured(self):
-        "clicks on flipkart assured check box"
-        obj1.wait_and_click(self.driver, element['clickOnfAssured'])
 
     def search_on_item2(self):
         "searches for watches"
         obj1.search_item(self.driver,element["click_search"], "watches")
 
-    def click_on_price(self):
-        "clicks on price"
-        obj1.select_class(self.driver,element["clickon_price"])
-
-    def click_on_fastrack(self):
-        "clicks on fastrack brand"
-        obj1.click_on(self.driver,element['clickon_fastrack'])
-
-    def click_on_watch(self):
-        "click on watch"
-        obj1.wait_and_click(self.driver,element['clickon_watch'])
-
-    def click_on_buy(self):
-        "clicks on buy"
-        obj1.wait_and_click(self.driver,element['clickon_buy'])
 
     def click_on_view(self):
         "clicks on view all"
@@ -87,13 +51,9 @@ class Flipkart:
         obj1.hover_all(self.driver,element['clickon_home'])
 
 
-
-
-
     def grab_menu(self):
         "grabs all the menu"
         obj1.grab(self.driver,element['graball_menu'])
-
 
 
     def click_on_electronics(self):
@@ -114,10 +74,4 @@ class Flipkart:
 
 
 
-    def click_on_remove(self):
-        "clicks on remove"
-        obj1.wait_and_click(self.driver, element["clickonremove"])
 
-    def click_remove(self):
-        "clicks on remove pop up"
-        obj1.wait_and_click(self.driver,element['remove'])

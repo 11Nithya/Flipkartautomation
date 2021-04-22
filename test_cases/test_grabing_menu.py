@@ -1,7 +1,7 @@
 "move hover on all menu and displays all the menus"
 
 
-from pom.automate_flipkart import Flipkart
+from pom.Home_page import Flipkart
 from Library.basefixture import Driverinit
 from Library.file import ReadJson
 import time
@@ -10,7 +10,7 @@ read_json= ReadJson()
 
 class Test_Flipkart(Driverinit):
 
-    def test_obj(self):
+    def test_display_menu(self):
         """move hover on all menu and displays all the menus """
 
         flip= Flipkart(self.driver)

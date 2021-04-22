@@ -1,7 +1,7 @@
 "Displays deal of the day products"
 
 
-from pom.automate_flipkart import Flipkart
+from pom.Home_page import Flipkart
 from Library.basefixture import Driverinit
 from Library.file import ReadJson
 import time
@@ -10,7 +10,7 @@ read_json= ReadJson()
 
 class Test_Flipkart(Driverinit):
 
-    def test_obj(self):
+    def test_deal_of_the_day(self):
         "displays all the deals of the products"
 
         flip= Flipkart(self.driver)
